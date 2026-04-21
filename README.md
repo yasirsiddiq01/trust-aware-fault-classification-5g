@@ -110,6 +110,8 @@ Key findings:
 Title: *A Leakage-Safe Study of Trust-Aware Fault Classification in ns-3/5G-LENA Using QoS-Derived Features*
 
 (Will be updated after publication)
+## PhD Direction
+This repository serves as the baseline for ongoing research on agentic fault diagnosis under limited observability in 6G networks.
 
 ## Citation
 
