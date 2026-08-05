@@ -1,2 +1,2 @@
-﻿step3_campaign_v1_bundle.tar.gz
+step3_campaign_v1_bundle.tar.gz
 SHA-256: 2216f92a3b935dd788fd6da4efe99fc85be7df86551a1787ed1ecaf9c01f4a8b

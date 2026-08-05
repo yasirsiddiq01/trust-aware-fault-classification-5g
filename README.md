@@ -1,4 +1,4 @@
-﻿# Trust-Aware Fault Classification in 5G Networks
+# Trust-Aware Fault Classification in 5G Networks
 
 This repository preserves and documents simulation evidence for trust-aware
 fault classification using ns-3/5G-LENA QoS measurements.

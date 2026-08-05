@@ -1,4 +1,4 @@
-﻿# Study 1 Archived Results
+# Study 1 Archived Results
 
 ## Model-Level Results
 

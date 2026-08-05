@@ -1,4 +1,4 @@
-﻿# Study 1 Methodology
+# Study 1 Methodology
 
 ## Unit of Analysis
 

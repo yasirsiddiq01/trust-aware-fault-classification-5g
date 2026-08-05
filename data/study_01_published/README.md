@@ -1,4 +1,4 @@
-﻿# Study 1 Dataset
+# Study 1 Dataset
 
 ## Directory Contents
 

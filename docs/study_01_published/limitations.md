@@ -1,4 +1,4 @@
-﻿# Study 1 Limitations
+# Study 1 Limitations
 
 ## Simulation-Based Evidence
 

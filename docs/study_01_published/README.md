@@ -1,4 +1,4 @@
-﻿# Study 1: Published Fault-Classification Evidence
+# Study 1: Published Fault-Classification Evidence
 
 ## Status
 

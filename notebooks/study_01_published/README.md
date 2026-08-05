@@ -1,4 +1,4 @@
-﻿# Study 1 Archived Notebook
+# Study 1 Archived Notebook
 
 `Fault_feature_type_engineering.ipynb` preserves the Study 1 analysis,
 feature-engineering steps, model outputs, and class-specific evaluation.

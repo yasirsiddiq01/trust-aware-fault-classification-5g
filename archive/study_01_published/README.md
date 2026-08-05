@@ -1,4 +1,4 @@
-﻿# Study 1 Original Archive
+# Study 1 Original Archive
 
 `step3_campaign_v1_bundle.tar.gz` is the recovered compressed evidence package
 for Study 1.
