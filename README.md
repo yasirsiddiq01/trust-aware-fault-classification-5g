@@ -1,135 +1,136 @@
-# Trust-Aware Fault Classification in 5G Networks (ns-3 / 5G-LENA)
+# Trust-Aware Fault Classification in 5G Networks
 
-## Overview
+This repository preserves and documents simulation evidence for trust-aware
+fault classification using ns-3/5G-LENA QoS measurements.
 
-This repository contains the implementation and experimental pipeline for trust-aware fault classification in 5G networks using QoS-derived features. The study is based on ns-3 (5G-LENA) simulations and evaluates the limitations of QoS observability under varying network fault conditions.
+The repository is being developed in three distinct research stages:
 
-## Problem Statement
+| Stage | Scope | Current repository status |
+|---|---|---|
+| Study 1 | Initial seven-condition fault-classification experiment | Evidence package recovered and under repository review |
+| Study 2 | Expanded 700-simulation campaign with refined radio severities | Not yet added to this repository |
+| GATE-5G | Governance and assurance extension for AI-assisted incident response | Planned; not yet implemented |
 
-Reliable fault detection in 5G networks is challenging due to limited observability at the QoS level. Subtle network degradations often exhibit overlapping feature representations, making classification unstable and unreliable. This work investigates the impact of feature-space limitations on fault detectability.
+## Current Scope
 
-## Contributions
+The current branch contains the recovered evidence package for Study 1.
 
-* Leakage-safe grouped evaluation protocol for QoS-based classification
-* Feature engineering for enhanced observability (packet_loss_ratio, jitter_delay_ratio, interaction terms)
-* Comparative analysis of Logistic Regression and Random Forest models
-* Trust-aware evaluation using confidence and margin analysis
-* ns-3 (5G-LENA) simulation pipeline for controlled fault injection
+Study 1 evaluated three network-condition classes:
+
+- normal operation;
+- traffic overload;
+- radio degradation.
+
+Traffic-overload and radio-degradation conditions each contained three
+severity levels.
+
+## Study 1 Dataset
+
+The original campaign planned 35 simulation blocks. Two blocks were excluded
+because the `radio_degradation` severity-3 simulation failed, leaving
+incomplete seven-condition blocks.
+
+The retained package contains:
+
+- 33 complete simulation blocks;
+- 7 conditions per block;
+- 231 accepted simulation CSV files;
+- 2 flow records per condition;
+- 462 accepted flow-level records;
+- 29 original columns;
+- 12 quarantined CSV files;
+- 24 quarantined flow records;
+- no blank values in accepted records;
+- no exact duplicate accepted records.
+
+The grouping unit is the combined `seed` and `run_id`. All flows from the same
+simulation block must remain in the same model partition.
+
+## Archived Model Results
+
+| Model | Accuracy | Macro-F1 |
+|---|---:|---:|
+| Logistic Regression baseline | 0.642857 | 0.576720 |
+| Random Forest first clean run | 0.846939 | 0.653251 |
+| Balanced Random Forest | 0.704082 | 0.654652 |
+| Minimal MLP | 0.857143 | 0.618072 |
+
+These are historical outputs preserved in the archived notebook. They have not
+yet been independently rerun from a fully reconstructed simulator and Python
+environment in this repository.
+
+## Why Governance Is Needed
+
+Overall accuracy did not provide a complete account of model reliability.
+
+The archived results show that:
+
+- the Random Forest correctly identified only 1 of 14 normal-operation test records;
+- the MLP correctly identified 0 of 14 normal-operation test records;
+- high aggregate accuracy therefore coexisted with severe class-specific failure.
+
+This motivates the future GATE-5G extension, which will study calibrated
+confidence, abstention, evidence completeness, distribution-shift warnings,
+human escalation, action-risk controls, authorization requirements, and
+structured audit logging.
+
+No governance engine or autonomous recovery capability is implemented in the
+current Study 1 package.
 
 ## Repository Structure
 
-* `ns3_simulation/` – Simulation scripts and scenario definitions
-* `data/` – Raw and processed datasets
-* `src/` – ML pipeline (preprocessing, models, evaluation)
-* `experiments/` – Reproducible experiment configurations
-* `results/` – Output figures and logs
-* `paper/` – Manuscript and figures
+```text
+archive/study_01_published/
+    Original compressed evidence archive
 
-## Dataset
+data/study_01_published/
+    Accepted raw CSV files, quarantined files, and integrity manifests
 
-The dataset is generated using ns-3 5G-LENA simulations with the following fault scenarios:
+notebooks/study_01_published/
+    Archived analysis and feature-engineering notebook
 
-* `none` (normal operation)
-* `radio_degradation`
-* `traffic_overload`
-
-QoS Features:
-
-* Throughput
-* Delay
-* Jitter
-* Packet loss
-* Engineered features (ratios and interactions)
-
-## Methodology
-
-### 1. Simulation
-
-* 5G-LENA ns-3 environment
-* Urban Micro (UMi) propagation model
-* Controlled fault injection (radio + traffic)
-
-### 2. Feature Engineering
-
-* QoS extraction
-* Derived features for better separability
-* Group-aware splitting to prevent leakage
-
-### 3. Modeling
-
-* Logistic Regression (baseline + balanced)
-* Random Forest (standard + balanced)
-
-### 4. Evaluation
-
-* Accuracy
-* Macro F1-score
-* Confusion matrix
-* Confidence and margin analysis
-
-## Installation
-
-```bash
-git clone https://github.com/yasirsiddiq01/trust-aware-fault-classification-5g.git
-cd trust-aware-fault-classification-5g
-pip install -r requirements.txt
+docs/study_01_published/
+    Methodology, results, limitations, and provenance documentation
 ```
 
-## Running Experiments
+## Reproducibility Status
 
-```bash
-python src/main.py --config config/rf.yaml
-```
+The repository currently preserves:
 
-## Reproducibility
+- original accepted and quarantined CSV evidence;
+- exclusion records;
+- dataset-state documentation;
+- file hashes;
+- an evidence inventory;
+- the archived analysis notebook.
 
-All experiments are controlled via configuration files in the `config/` directory. Each experiment folder contains logs and outputs to ensure full reproducibility.
+The repository does not yet contain verified evidence for:
 
-## Results
+- the exact original ns-3 version;
+- the exact original 5G-LENA version;
+- the canonical original simulation source;
+- a complete frozen Python environment;
+- an independently rerun end-to-end reproduction.
 
-Key findings:
+The current package should therefore be described as a recovered experimental
+evidence and analysis record, not yet as full end-to-end simulator reproduction.
 
-* QoS-based features struggle with subtle radio degradations
-* Structural overlap leads to unstable classification boundaries
-* Balanced models improve recall but not feature separability
+## Documentation
 
-## Limitations
+- [Study 1 overview](docs/study_01_published/README.md)
+- [Methodology](docs/study_01_published/methodology.md)
+- [Archived results](docs/study_01_published/results.md)
+- [Limitations](docs/study_01_published/limitations.md)
+- [Dataset documentation](data/study_01_published/README.md)
 
-* Limited feature observability at QoS level
-* No PHY-layer information included
-* Simulation-based evaluation (no real-world traces)
+## Publication Status
 
-## Future Work
+The associated Study 1 paper has been published. The verified publication
+citation and permitted manuscript version will be added after publisher and
+copyright details are confirmed.
 
-* Integration of PHY/MAC-level telemetry
-* Uncertainty-aware models
-* Agentic fault diagnosis using LLM-based reasoning
+## License Status
 
-## Paper
-
-Title: *A Leakage-Safe Study of Trust-Aware Fault Classification in ns-3/5G-LENA Using QoS-Derived Features*
-
-(Will be updated after publication)
-## PhD Direction
-This repository serves as the baseline for ongoing research on agentic fault diagnosis under limited observability in 6G networks.
-
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@article{paper2026,
-  title={Trust-Aware Fault Classification in 5G Networks},
-  author={Yasir Siddiq},
-  year={2026}
-}
-```
-
-## License
-
-MIT License
-
-## Contact
-
-For questions or collaboration:
-mailto: yasir.sre@gmail.com
+Repository-wide licensing is under review. Individual third-party source files,
+if added later, will retain their original licence headers. No licence claim
+should be inferred for materials that do not yet have an explicit licence.
