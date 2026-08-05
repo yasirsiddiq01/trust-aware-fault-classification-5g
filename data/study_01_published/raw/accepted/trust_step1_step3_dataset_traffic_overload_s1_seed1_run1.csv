@@ -1,0 +1,3 @@
+run_id,seed,scenario_id,fault_type,fault_active,fault_severity,gNb_num,ue_per_gNb,effective_lambda_ull,effective_lambda_be,flow_id,src_ip,dst_ip,protocol,src_port,dst_port,tx_packets,rx_packets,lost_packets,tx_bytes,rx_bytes,throughput_mbps,mean_delay_ms,mean_jitter_ms,packet_loss_ratio,time_first_tx_s,time_last_rx_s,flow_duration_s,sim_time_s
+1,1,step3_dataset,traffic_overload,1,1,1,2,20000,20000,1,1.0.0.2,7.0.0.2,UDP,49153,1234,12000,11995,0,1536000,1535360,20.471863,0.277835,0.020026,0.000000,0.400000,0.999988,0.599988,1.000000
+1,1,step3_dataset,traffic_overload,1,1,1,2,20000,20000,2,1.0.0.2,7.0.0.3,UDP,49154,1235,12000,6644,0,15360000,8504320,113.422665,135.101468,0.103944,0.000000,0.400000,0.999832,0.599832,1.000000

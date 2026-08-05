@@ -1,0 +1,47 @@
+step3_campaign_v1 dataset state
+===============================
+
+Production directory:
+research/data/raw_step3_campaign_v1
+
+Quarantine directory:
+research/data/raw_step3_campaign_v1_quarantine
+
+Scenario:
+step3_dataset
+
+Block design:
+7 conditions per (seed, run)
+- none_s0
+- traffic_overload_s1
+- traffic_overload_s2
+- traffic_overload_s3
+- radio_degradation_s1
+- radio_degradation_s2
+- radio_degradation_s3
+
+Planned seeds:
+1..7
+
+Planned runs:
+1..5
+
+Total planned blocks:
+35
+
+Excluded blocks:
+- seed=3 run=3 reason=radio_degradation_s3_crash
+- seed=7 run=2 reason=radio_degradation_s3_crash
+
+Complete retained blocks:
+33
+
+Expected retained dataset CSV files:
+231
+
+Quarantined partial CSV files:
+12
+
+Status:
+NS3 generation complete after documented block-level exclusions.
+Safe for export to Colab for merge/validation/analysis.

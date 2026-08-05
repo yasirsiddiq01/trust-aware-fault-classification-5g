@@ -1,0 +1,2 @@
+﻿Fault_feature_type_engineering.ipynb
+SHA-256: abb4a490d990f5098096e04f96a53a6030c545fdfd65053a4a8b6ba7ed9592fe
