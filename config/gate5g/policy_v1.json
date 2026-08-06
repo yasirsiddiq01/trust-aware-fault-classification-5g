@@ -1,0 +1,38 @@
+{
+  "policy_id": "gate5g",
+  "policy_version": "1.0.0",
+  "default_decision": "BLOCK",
+  "audit_required": true,
+  "autonomous_execution_allowed": false,
+  "decision_precedence": [
+    "identity_and_provenance",
+    "input_validity",
+    "evidence_and_distribution",
+    "confidence",
+    "authority",
+    "audit"
+  ],
+  "decisions": [
+    "ALLOW_DIAGNOSIS",
+    "RECOMMEND_ONLY",
+    "REQUIRE_HUMAN_APPROVAL",
+    "ABSTAIN",
+    "BLOCK"
+  ],
+  "authority_levels": [
+    "L0_OBSERVE",
+    "L1_DIAGNOSE",
+    "L2_RECOMMEND",
+    "L3_APPROVAL_REQUIRED"
+  ],
+  "study_policies": {
+    "study_01_published": {
+      "maximum_authority": "L3_APPROVAL_REQUIRED",
+      "confidence_thresholds": null
+    },
+    "study_02_independent": {
+      "maximum_authority": "L2_RECOMMEND",
+      "confidence_thresholds": null
+    }
+  }
+}
