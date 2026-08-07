@@ -19,7 +19,9 @@
       "evidence_state": "PARTIAL_INDEPENDENT_EVIDENCE",
       "data_origin": "STUDY_02",
       "relationship_to_study_01": "RESEARCH_LINEAGE_ONLY",
-      "repository_paths": [],
+      "repository_paths": [
+        "data/study_02_independent"
+      ],
       "calibration_state": "INCOMPLETE",
       "cross_study_data_allowed": false
     }
