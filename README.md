@@ -7,9 +7,9 @@ The repository is being developed in three distinct research stages:
 
 | Stage | Scope | Current repository status |
 |---|---|---|
-| Study 1 | Initial seven-condition fault-classification experiment | Evidence package recovered and under repository review |
-| Study 2 | Expanded 700-simulation campaign with refined radio severities | Not yet added to this repository |
-| GATE-5G | Governance and assurance extension for AI-assisted incident response | Planned; not yet implemented |
+| Study 1 | Initial seven-condition fault-classification experiment | Published evidence preserved and documented |
+| Study 2 | Independent expanded 700-simulation campaign | Partial independent evidence integrated; study remains incomplete |
+| GATE-5G | Governance and assurance for AI-assisted 5G fault evaluation | Implemented and verified |
 
 ## GATE-5G
 
@@ -84,13 +84,15 @@ The archived results show that:
 - the MLP correctly identified 0 of 14 normal-operation test records;
 - high aggregate accuracy therefore coexisted with severe class-specific failure.
 
-This motivates the future GATE-5G extension, which will study calibrated
-confidence, abstention, evidence completeness, distribution-shift warnings,
-human escalation, action-risk controls, authorization requirements, and
-structured audit logging.
+These findings motivated the GATE-5G governance and assurance layer now
+implemented in this repository. GATE-5G separates model inference from
+operational authority and applies deterministic policy checks, explicit
+reason codes, authority controls, study/context isolation, and
+tamper-evident audit evidence.
 
-No governance engine or autonomous recovery capability is implemented in the
-current Study 1 package.
+The published Study 1 evidence remains unchanged. GATE-5G is implemented
+as a separate governance layer and does not retroactively alter the
+original Study 1 experiment.
 
 ## Repository Structure
 
@@ -137,6 +139,17 @@ evidence and analysis record, not yet as full end-to-end simulator reproduction.
 - [Archived results](docs/study_01_published/results.md)
 - [Limitations](docs/study_01_published/limitations.md)
 - [Dataset documentation](data/study_01_published/README.md)
+
+### Policy memo
+
+Siddiq, Y., & Anwar, S. (2026).
+*GATE-5G: From Prediction to Permission in AI-Assisted 5G Networks*.
+Policy Memo, Version 1.0. Zenodo.
+
+**DOI:** [10.5281/zenodo.21855481](https://doi.org/10.5281/zenodo.21855481)
+
+For detailed framework documentation, see
+[docs/gate5g/README.md](docs/gate5g/README.md).
 
 ## Publication Status
 
