@@ -25,7 +25,7 @@ Run:
 
 ```powershell
 python -B -m gate5g
-
+```
 ## Current Scope
 
 The current branch contains the recovered evidence package for Study 1.
