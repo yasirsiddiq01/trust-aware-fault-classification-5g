@@ -11,6 +11,21 @@ The repository is being developed in three distinct research stages:
 | Study 2 | Expanded 700-simulation campaign with refined radio severities | Not yet added to this repository |
 | GATE-5G | Governance and assurance extension for AI-assisted incident response | Planned; not yet implemented |
 
+## GATE-5G
+
+**GATE-5G — Governance and Assurance for Trustworthy Evaluation in 5G**
+is a technical-governance framework that separates AI inference from
+operational authority.
+
+The implemented prototype provides deterministic policy enforcement,
+authority controls, explicit reason codes, study/context isolation,
+tamper-evident audit evidence, and a reproducible command-line
+demonstration.
+Run:
+
+```powershell
+python -B -m gate5g
+
 ## Current Scope
 
 The current branch contains the recovered evidence package for Study 1.
