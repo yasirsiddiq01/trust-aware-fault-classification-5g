@@ -153,7 +153,8 @@ For detailed framework documentation, see
 
 ## Publication Status
 
-The associated Study 1 paper has been published. The verified publication
+The associated Study 1 paper has been accepted for WECE 2026 presentation/publication; publication is pending
+. The verified publication
 citation and permitted manuscript version will be added after publisher and
 copyright details are confirmed.
 
